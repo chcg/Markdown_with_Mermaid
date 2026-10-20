@@ -7,7 +7,7 @@ Markdown Preview for Notepad++ with **VS Code-inspired rendering**, offline
 Native Windows plugin for **x64 and x86**.
 
 Author: [Artyom Nikiforov (rhyots)](https://github.com/rhyots).
-**1.4.0 is a release candidate; binary packages have not been released.**
+**1.4.0 is a prerelease candidate.**
 Native Notepad++ acceptance is in progress: [validation status](docs/TESTING.md).
 
 <!-- section:advantages -->
@@ -67,7 +67,7 @@ The candidate DLLs do not have a developer-owned code signature.
 <!-- section:installation -->
 ## Installation
 
-1. When published, download the x64 or x86 plugin ZIP from
+1. Download the x64 or x86 prerelease plugin ZIP from
    [Releases](https://github.com/rhyots/Markdown_with_Mermaid/releases).
 2. Save your work and close Notepad++.
 3. Create `plugins/Markdown_with_Mermaid` inside the Notepad++ installation directory.

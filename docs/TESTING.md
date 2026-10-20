@@ -145,9 +145,9 @@ For Plugins Admin, use the official debug Notepad++/WinGUp procedure with a loca
 catalog, then verify the public download URLs, install, update and removal.
 The ZIP/resource checker is useful preparation, but does not replace that test.
 
-Anonymous download validation and the official catalog validator have not run
-against published binary assets. The supplied build CI template is separate
-from native acceptance and distribution checks; remote execution remains pending.
-The minimum supported
-Notepad++ version remains unconfirmed; Windows 11 remains untested. The local
-candidate is prepared for review, not approved for publication.
+Prerelease downloads are checked separately against their published checksums;
+this does not replace the official catalog validator or Plugins Admin acceptance.
+The supplied build CI template is separate from native acceptance and
+distribution checks; remote execution remains pending. The minimum supported
+Notepad++ version remains unconfirmed; Windows 11 remains untested. This is a
+prerelease, with final native acceptance and whole-plugin licensing review open.

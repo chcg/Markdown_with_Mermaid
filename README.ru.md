@@ -7,7 +7,7 @@
 экспортом HTML, PDF и DOCX. Нативный плагин Windows для **x64 и x86**.
 
 Автор: [Artyom Nikiforov (rhyots)](https://github.com/rhyots).
-**1.4.0 — кандидат релиза; бинарные пакеты ещё не опубликованы.** Приёмка
+**1.4.0 — предварительный кандидат релиза.** Приёмка
 в настоящем Notepad++ продолжается: [состояние проверок](docs/TESTING.md).
 
 <!-- section:advantages -->
@@ -66,7 +66,7 @@ DLL кандидата не подписаны собственным серти
 <!-- section:installation -->
 ## Установка
 
-1. После публикации скачайте ZIP x64 или x86 со страницы
+1. Скачайте ZIP x64 или x86 предварительного выпуска со страницы
    [Releases](https://github.com/rhyots/Markdown_with_Mermaid/releases).
 2. Сохраните документы и закройте Notepad++.
 3. Создайте `plugins/Markdown_with_Mermaid` внутри каталога установки Notepad++.
