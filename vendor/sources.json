@@ -1,0 +1,28 @@
+{
+  "vscode": {
+    "revision": "c5fd880660029330eb7464f71cc78ecaa638206c",
+    "file": "extensions/markdown-language-features/media/markdown.css",
+    "sha256": "31ACBA626BE3846F2A9B78421CE55E94FEB5446D2B39BD06AB0453C0A010092D"
+  },
+  "markdownIt": {
+    "version": "14.1.0",
+    "sha256": "7C4FAB4D4D39FE98206A7FBBED4B1E3578F2B70B6B69D309413E33EEC140E19F",
+    "url": "https://registry.npmjs.org/markdown-it/-/markdown-it-14.1.0.tgz"
+  },
+  "highlightJs": {
+    "version": "11.11.1",
+    "sha256": "28A06BF6EBCC2218C6E842BDB4F1C8353508A8CADA59E85110F91892F5726195",
+    "url": "https://registry.npmjs.org/@highlightjs/cdn-assets/-/cdn-assets-11.11.1.tgz"
+  },
+  "domPurify": {
+    "version": "3.4.17",
+    "sha256": "056CBDAE276897208B88C21D1D779ADFA09AD7BE488A2F510A28E900D3BBFFE7",
+    "url": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.17.tgz"
+  },
+  "mermaid": {
+    "url": "https://registry.npmjs.org/mermaid/-/mermaid-11.16.1.tgz",
+    "sha256": "EBD9885111092C78CEFC79A76F6C1DC34ED5B834B02AE8F338227CE79C003DE4",
+    "version": "11.16.1",
+    "browserBundleSha256": "18327BEF70D96FB505FE7287D9F6A7362EBF07FF6576DDFAFFB1A06F3E1A2954"
+  }
+}

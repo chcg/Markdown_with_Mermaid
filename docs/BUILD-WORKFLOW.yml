@@ -1,0 +1,35 @@
+name: Build and validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-2022
+    timeout-minutes: 30
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Bootstrap pinned tools
+        shell: pwsh
+        run: ./bootstrap.ps1
+      - name: Check bilingual README structure and facts
+        shell: pwsh
+        run: node tools/check-readme-parity.cjs
+      - name: Build x64 and x86
+        shell: pwsh
+        run: ./build.ps1 -Profile Release
+      - name: Check versions and packages
+        shell: pwsh
+        run: ./tools/check-release-package.ps1 -ReportPath build/package-validation.json
+      - name: Check DLL architectures and imports
+        shell: pwsh
+        run: node tests/check-binaries.cjs

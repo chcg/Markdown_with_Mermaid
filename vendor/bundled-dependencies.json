@@ -1,0 +1,1238 @@
+[
+  {
+    "name": "@braintree/sanitize-url",
+    "version": "7.1.2",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/@braintree/sanitize-url/-/sanitize-url-7.1.2.tgz",
+    "archiveSha256": "fd9a220c24c5cdd406433cce1c3db7f09222d8f7977f0fe087aec914e1a63dc0"
+  },
+  {
+    "name": "@iconify/utils",
+    "version": "3.0.2",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/@iconify/utils/-/utils-3.0.2.tgz",
+    "archiveSha256": "7f1b0f8bd152444d962bbcb258f57583bea55bb05e437eedf4cc950b9b56f969"
+  },
+  {
+    "name": "@upsetjs/venn.js",
+    "version": "2.0.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/@upsetjs/venn.js/-/venn.js-2.0.0.tgz",
+    "archiveSha256": "23c5da5de5c23351c6c6ed891d6416284c05c618e2774bd55484a4c4bef321e4"
+  },
+  {
+    "name": "argparse",
+    "version": "2.0.1",
+    "bundles": [
+      "markdown-it.min.js"
+    ],
+    "license": "Python-2.0",
+    "archiveUrl": "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz",
+    "archiveSha256": "27903847fc8215e6fc5a33e81490f7baba66403f8aade33771b988cca097728c",
+    "inventoryBasis": "Conservative notice from declared dependency minimum; exact bundled revision is not asserted"
+  },
+  {
+    "name": "available-typed-arrays",
+    "version": "1.0.7",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.7.tgz",
+    "archiveSha256": "8b140e0fa3fede3d81d1dffcc400c9755d7388e8a4add228487f5e20c9cf7863"
+  },
+  {
+    "name": "base64-js",
+    "version": "1.5.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz",
+    "archiveSha256": "b1b7a945b52685269083425216d6597e33d97bf21699d656e92fdb3eb5210a85"
+  },
+  {
+    "name": "buffer",
+    "version": "5.7.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/buffer/-/buffer-5.7.1.tgz",
+    "archiveSha256": "98bfac55b7a37ade644f5eccbcf94a59269afd13e1f9af597e61fd06c057c0bc"
+  },
+  {
+    "name": "call-bind",
+    "version": "1.0.8",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/call-bind/-/call-bind-1.0.8.tgz",
+    "archiveSha256": "30e2bdf3ce00c012527ae4161df4145cbf4c797e9fa30e43fc7324b2e07b0523"
+  },
+  {
+    "name": "call-bind-apply-helpers",
+    "version": "1.0.2",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz",
+    "archiveSha256": "073e9ff9dbabedf5c128020a677381e9f92c90188d118830b30a7656a7c37d2c"
+  },
+  {
+    "name": "call-bound",
+    "version": "1.0.4",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/call-bound/-/call-bound-1.0.4.tgz",
+    "archiveSha256": "32086f492fedf1b9b34811f2ee50ca2cca53da5c783f7cd5f939d3f1e86bbd32"
+  },
+  {
+    "name": "core-util-is",
+    "version": "1.0.3",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz",
+    "archiveSha256": "4430fdc71f2cf3b5e297113b9a692da2d6cff96cf84da00f0ecef5e5a6e74d0c"
+  },
+  {
+    "name": "cose-base",
+    "version": "1.0.3",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/cose-base/-/cose-base-1.0.3.tgz",
+    "archiveSha256": "a20640fb8c1a2cf226eb9195785e9f714ba1cce1e80cb8f48d131d1bc0909d18"
+  },
+  {
+    "name": "cose-base",
+    "version": "2.2.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/cose-base/-/cose-base-2.2.0.tgz",
+    "archiveSha256": "612ec91a30b7f2dc158cca4846eeea1b7f89a97fc672951da3c1932107de6da8"
+  },
+  {
+    "name": "cytoscape",
+    "version": "3.33.3",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/cytoscape/-/cytoscape-3.33.3.tgz",
+    "archiveSha256": "a8ef58fb60637d5a5ef326fc68fde12e387784b6258b4a2226b926c3621e6b7e"
+  },
+  {
+    "name": "cytoscape-cose-bilkent",
+    "version": "4.1.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/cytoscape-cose-bilkent/-/cytoscape-cose-bilkent-4.1.0.tgz",
+    "archiveSha256": "9df46b10952452b1d2a5d4cd942f70709a037bc6b7ef25cf1d9fb70be73bb950"
+  },
+  {
+    "name": "cytoscape-fcose",
+    "version": "2.2.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/cytoscape-fcose/-/cytoscape-fcose-2.2.0.tgz",
+    "archiveSha256": "4e1f30e1821fdd4b66f21043c8ea40a8e2ad0ba75e4ccdd2c24d289cf5595432"
+  },
+  {
+    "name": "d3",
+    "version": "7.9.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3/-/d3-7.9.0.tgz",
+    "archiveSha256": "7e36605710a2ba54846797c8c6d888911341b215ae53257dc32a49a0b824355e"
+  },
+  {
+    "name": "d3-array",
+    "version": "2.12.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "BSD-3-Clause",
+    "archiveUrl": "https://registry.npmjs.org/d3-array/-/d3-array-2.12.1.tgz",
+    "archiveSha256": "3795da9bd345fc440b82be032400c538298e021b559ca48342fe9647e44bb86b"
+  },
+  {
+    "name": "d3-array",
+    "version": "3.2.4",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-array/-/d3-array-3.2.4.tgz",
+    "archiveSha256": "6dbf3f2be39e48f86775be6e166a5d3e5a585ca7144453cd6ad1912f5ae4417f"
+  },
+  {
+    "name": "d3-axis",
+    "version": "3.0.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-axis/-/d3-axis-3.0.0.tgz",
+    "archiveSha256": "b5ca6e00b9a2503d6b473485684670564a370733cdc8565a45b63f9fb4d944f6"
+  },
+  {
+    "name": "d3-brush",
+    "version": "3.0.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-brush/-/d3-brush-3.0.0.tgz",
+    "archiveSha256": "fde88a49b16f92d067401df00abf88bf07eec3e091343eb902caf9cab02bdf2a"
+  },
+  {
+    "name": "d3-chord",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-chord/-/d3-chord-3.0.1.tgz",
+    "archiveSha256": "84c47d193e5e8c5fd3a28783a55b34f08dfaa1c8d764e96d9b49c78a3b6b40b5"
+  },
+  {
+    "name": "d3-color",
+    "version": "3.1.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-color/-/d3-color-3.1.0.tgz",
+    "archiveSha256": "d41bbcd99dd4f00e696546bffc73fed9b8fb6c3354905b6ea1721bff25f33b42"
+  },
+  {
+    "name": "d3-contour",
+    "version": "4.0.2",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-contour/-/d3-contour-4.0.2.tgz",
+    "archiveSha256": "fa347e237c259a987fc3cfd890e2fcb0f2ec42ed125a2c9363854509e86db8f4"
+  },
+  {
+    "name": "d3-delaunay",
+    "version": "6.0.4",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-delaunay/-/d3-delaunay-6.0.4.tgz",
+    "archiveSha256": "935113ffa78d545505c8f1accf95be0e48594737eab34db8f50c9d6319907971"
+  },
+  {
+    "name": "d3-dispatch",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-dispatch/-/d3-dispatch-3.0.1.tgz",
+    "archiveSha256": "3d1a0b5c003e0e9608ad57f6ca21a0c8368031fcbe5f5317fe4e50b3f797ea23"
+  },
+  {
+    "name": "d3-drag",
+    "version": "3.0.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-drag/-/d3-drag-3.0.0.tgz",
+    "archiveSha256": "a3ccc9d31d85135f35a4eda3ec0fae6ac22435d4e3fe2d2e0c73b5246460d4db"
+  },
+  {
+    "name": "d3-dsv",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-dsv/-/d3-dsv-3.0.1.tgz",
+    "archiveSha256": "fdafcae0362205e2fc63fe3e87fed54822227d9370ce5150914f863ec36153cb"
+  },
+  {
+    "name": "d3-ease",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "BSD-3-Clause",
+    "archiveUrl": "https://registry.npmjs.org/d3-ease/-/d3-ease-3.0.1.tgz",
+    "archiveSha256": "b249afe4aa8b741beeaf2d14f625ccf49270adb645e3f1c755d11476c1fdbe2a"
+  },
+  {
+    "name": "d3-fetch",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-fetch/-/d3-fetch-3.0.1.tgz",
+    "archiveSha256": "8a3d61af2bed2b4899df1a90dfed41c0e10ad79d1bea93a18155f5d4e11a526f"
+  },
+  {
+    "name": "d3-force",
+    "version": "3.0.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-force/-/d3-force-3.0.0.tgz",
+    "archiveSha256": "deacfa7ecb466f88717fe1863347dd65e5a5422d9f8c893d771cb2a7f987fa15"
+  },
+  {
+    "name": "d3-format",
+    "version": "3.1.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-format/-/d3-format-3.1.0.tgz",
+    "archiveSha256": "5439103fc9b6f033e02bf68fbeb13ecd2c33442f77ea772a4b2b1bc4f4cee5ba"
+  },
+  {
+    "name": "d3-geo",
+    "version": "3.1.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-geo/-/d3-geo-3.1.1.tgz",
+    "archiveSha256": "fe1f2dd81a87d942790c5a7786f4aab03df2b357d46d8af56b613fb8a1bb9be5"
+  },
+  {
+    "name": "d3-hierarchy",
+    "version": "3.1.2",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-hierarchy/-/d3-hierarchy-3.1.2.tgz",
+    "archiveSha256": "7681875f06440c088afda1fd834d853dd560166c945e731382ee0c636332360b"
+  },
+  {
+    "name": "d3-interpolate",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-interpolate/-/d3-interpolate-3.0.1.tgz",
+    "archiveSha256": "7e8df78d233cd102a0bb518658dc0b7d5c38442b6f2dbc8b95ffc14ba87c7c33"
+  },
+  {
+    "name": "d3-path",
+    "version": "1.0.9",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "BSD-3-Clause",
+    "archiveUrl": "https://registry.npmjs.org/d3-path/-/d3-path-1.0.9.tgz",
+    "archiveSha256": "2c10702bad9be578f0827d00e45010ae59cb67165f65462e5c781913a5505db1"
+  },
+  {
+    "name": "d3-path",
+    "version": "3.1.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-path/-/d3-path-3.1.0.tgz",
+    "archiveSha256": "94e9b69f82f113ed4ada36703c05f6b7406723c55affe2a443d69729d6d5da14"
+  },
+  {
+    "name": "d3-polygon",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-polygon/-/d3-polygon-3.0.1.tgz",
+    "archiveSha256": "6a33e6b083bd596a08e6f9e973fdb0d098f9ac8348cdc86346bb3e9c15614aca"
+  },
+  {
+    "name": "d3-quadtree",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-quadtree/-/d3-quadtree-3.0.1.tgz",
+    "archiveSha256": "d4145e9cecca8a6077e1099de96375ec9923b0de0df4004bd98aafa17c2d557f"
+  },
+  {
+    "name": "d3-random",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-random/-/d3-random-3.0.1.tgz",
+    "archiveSha256": "c35794d70beff4e2e2da799cd7fb0e3e763574f24c0fad38c1841770c12b99e8"
+  },
+  {
+    "name": "d3-sankey",
+    "version": "0.12.3",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "BSD-3-Clause",
+    "archiveUrl": "https://registry.npmjs.org/d3-sankey/-/d3-sankey-0.12.3.tgz",
+    "archiveSha256": "6bd8cdb143d4088ff38179def70954419868d4b95f136c168ffef2dad004ff22"
+  },
+  {
+    "name": "d3-scale",
+    "version": "4.0.2",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-scale/-/d3-scale-4.0.2.tgz",
+    "archiveSha256": "bf50a1f34ba0e6fa25cb7ae902abe0b9e2f85ced39fdca7b18fbe863fbaa39a7"
+  },
+  {
+    "name": "d3-scale-chromatic",
+    "version": "3.1.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-scale-chromatic/-/d3-scale-chromatic-3.1.0.tgz",
+    "archiveSha256": "2573f980e0acbbecc919f5c5fdf7cd3a8110eda2497da7b94ae303fab9c32aa4"
+  },
+  {
+    "name": "d3-selection",
+    "version": "3.0.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-selection/-/d3-selection-3.0.0.tgz",
+    "archiveSha256": "a1f872f30dca23b76de89cae9e882f56c325433e7f3aee87b95fa830d12789f3"
+  },
+  {
+    "name": "d3-shape",
+    "version": "1.3.7",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "BSD-3-Clause",
+    "archiveUrl": "https://registry.npmjs.org/d3-shape/-/d3-shape-1.3.7.tgz",
+    "archiveSha256": "d19261dad8ff192357db2720d57c1786dbfb8c9f42eafe577cb7c4d5b473fd0e"
+  },
+  {
+    "name": "d3-shape",
+    "version": "3.2.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-shape/-/d3-shape-3.2.0.tgz",
+    "archiveSha256": "8b4b2bc9daa99a957abe17656c5944fd3f28efb88f788e6b4fdba346cb80e602"
+  },
+  {
+    "name": "d3-time",
+    "version": "3.1.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-time/-/d3-time-3.1.0.tgz",
+    "archiveSha256": "a9f2c8e177b76e7068e7c9c77722c4924c71c9e54f9b1e245d27ef11b28dbc08"
+  },
+  {
+    "name": "d3-time-format",
+    "version": "4.1.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-time-format/-/d3-time-format-4.1.0.tgz",
+    "archiveSha256": "46f1492ef6be8afe04a844876a644a4a964da7f87937e90e93f9585acff9d30e"
+  },
+  {
+    "name": "d3-timer",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-timer/-/d3-timer-3.0.1.tgz",
+    "archiveSha256": "05cdf901e1876a7f24f4c365a879252752e22e3cc52b131ca616639f07e8ed05"
+  },
+  {
+    "name": "d3-transition",
+    "version": "3.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-transition/-/d3-transition-3.0.1.tgz",
+    "archiveSha256": "260eb8eaed565581afc00634ec83c83fd3b7e830e2a6b73b49f3f744dce0254c"
+  },
+  {
+    "name": "d3-zoom",
+    "version": "3.0.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/d3-zoom/-/d3-zoom-3.0.0.tgz",
+    "archiveSha256": "846d28725c4889d6a2069c6cf084ca7e7730ee917a9b87960ecc53247f840f85"
+  },
+  {
+    "name": "dagre-d3-es",
+    "version": "7.0.14",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/dagre-d3-es/-/dagre-d3-es-7.0.14.tgz",
+    "archiveSha256": "488d146fc076978029da937a54628f840dbbcb48e6f95ea79e6c58cc384fe157"
+  },
+  {
+    "name": "dayjs",
+    "version": "1.11.20",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/dayjs/-/dayjs-1.11.20.tgz",
+    "archiveSha256": "e0a739b8406c01dcb28595caed88ed01e33f74bb48ce6416bafa7fa8d9d81326"
+  },
+  {
+    "name": "define-data-property",
+    "version": "1.1.4",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/define-data-property/-/define-data-property-1.1.4.tgz",
+    "archiveSha256": "16304ad73df1364ca8623c28a8969de01cd7189b4f9b05668fadb598f110e4d2"
+  },
+  {
+    "name": "docx",
+    "version": "9.12.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/docx/-/docx-9.12.0.tgz",
+    "archiveSha256": "952d56e872235d699248e245392f3b298d3b052d2078b7edb580f503435cd931"
+  },
+  {
+    "name": "dompurify",
+    "version": "3.4.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "(MPL-2.0 OR Apache-2.0)",
+    "archiveUrl": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.0.tgz",
+    "archiveSha256": "f80229eb7e0aa0943356b82f9884b2493a190febc3d65ac5e1717f96a6a7a7ba"
+  },
+  {
+    "name": "dunder-proto",
+    "version": "1.0.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz",
+    "archiveSha256": "ed1342228c82c10df9921c59d684df516a0cd6ed25b61e5f9d6330895326cfdb"
+  },
+  {
+    "name": "entities",
+    "version": "4.4.0",
+    "bundles": [
+      "markdown-it.min.js"
+    ],
+    "license": "BSD-2-Clause",
+    "archiveUrl": "https://registry.npmjs.org/entities/-/entities-4.4.0.tgz",
+    "archiveSha256": "259d977a75c6af00edcc2f69fd4a180d14e0cc6186c0817bce027c92b6995ba4",
+    "inventoryBasis": "Conservative notice from declared dependency minimum; exact bundled revision is not asserted"
+  },
+  {
+    "name": "es-define-property",
+    "version": "1.0.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz",
+    "archiveSha256": "5986b8b13121340a8b0d5c7d8f0f961aa80ef3a74515ca9cb7a78d86ed0385f7"
+  },
+  {
+    "name": "es-errors",
+    "version": "1.3.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz",
+    "archiveSha256": "d14dd1c35b4bd3b8aca3219fd3627eb7f3eb49cf6b4c8a7ca58b91fd7a190993"
+  },
+  {
+    "name": "es-object-atoms",
+    "version": "1.1.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.1.tgz",
+    "archiveSha256": "3e18e4d757818aee7bf1921686c6c3e7f9676d17c5c6fec560567c6beee579ce"
+  },
+  {
+    "name": "es-toolkit",
+    "version": "1.45.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/es-toolkit/-/es-toolkit-1.45.1.tgz",
+    "archiveSha256": "0ab10ae18c0853f0c989ee187cecd9d5b2dd561bdf2b3c9f314bbc981aab427f"
+  },
+  {
+    "name": "events",
+    "version": "3.3.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/events/-/events-3.3.0.tgz",
+    "archiveSha256": "2c30dd630b58299bdfaac8688f763c6f312d29779c500b1e3701a1d4fb3b534b"
+  },
+  {
+    "name": "for-each",
+    "version": "0.3.5",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/for-each/-/for-each-0.3.5.tgz",
+    "archiveSha256": "4bd2cfc8e674c93cf7abb3bd3d6fd8e388fa10324bec011223a8fa4f287185d1"
+  },
+  {
+    "name": "function-bind",
+    "version": "1.1.2",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz",
+    "archiveSha256": "704402651b02a1454f17d445fc7dd716efc282d059407126d58ef30a47e807aa"
+  },
+  {
+    "name": "get-intrinsic",
+    "version": "1.3.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz",
+    "archiveSha256": "662e27e54e00fe46fbb08f9f4aacb054e3695dbe72cc14b436613fbcfb780544"
+  },
+  {
+    "name": "get-proto",
+    "version": "1.0.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz",
+    "archiveSha256": "eb2cc52afb1f1fd82c5fc2a58c2380f0f16fdcdb5631538f3c66887435d70681"
+  },
+  {
+    "name": "gopd",
+    "version": "1.2.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz",
+    "archiveSha256": "d536d0de4dd285dc1468fbb7f39334a47ee0eec9c27f9b626a6e71466c9fda82"
+  },
+  {
+    "name": "has-property-descriptors",
+    "version": "1.0.2",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/has-property-descriptors/-/has-property-descriptors-1.0.2.tgz",
+    "archiveSha256": "0219bbd8f32e268eeb6efff55a2c6ff2d502098f49c583ff023b2d9d5a8bfa87"
+  },
+  {
+    "name": "has-symbols",
+    "version": "1.1.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz",
+    "archiveSha256": "4460c7532f28b8df2ddc9a1ec17816d43c24d4b9591dc6c5936b82f7f86ae7c5"
+  },
+  {
+    "name": "has-tostringtag",
+    "version": "1.0.2",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.2.tgz",
+    "archiveSha256": "dc1c74e3f1179a6271f84747d72c89f258aa46ad3e6464fae0e41737a7f0ef7b"
+  },
+  {
+    "name": "hash.js",
+    "version": "1.1.7",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/hash.js/-/hash.js-1.1.7.tgz",
+    "archiveSha256": "8eadfe0cbd33052fedb65ed4bf9acfe4645eafaabf877d99e3b1d9d771668ca6"
+  },
+  {
+    "name": "hasown",
+    "version": "2.0.2",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz",
+    "archiveSha256": "50cdc4d2cd11ae04b6ee29f328d09022244962e5dfab303c8fc223ff8dfa807d"
+  },
+  {
+    "name": "ieee754",
+    "version": "1.2.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "BSD-3-Clause",
+    "archiveUrl": "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz",
+    "archiveSha256": "8ef14b9b397e339db89db97881fb714f49319d8f0eb1275901f45567b28f9dac"
+  },
+  {
+    "name": "immediate",
+    "version": "3.0.6",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/immediate/-/immediate-3.0.6.tgz",
+    "archiveSha256": "98c792f39650b00818c05dcc407902034dc4092f368596b37658d44f28739d11"
+  },
+  {
+    "name": "inherits",
+    "version": "2.0.4",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz",
+    "archiveSha256": "d94dbc6c1bb3c5ac0fb12a73ade187108fc60de273a1b754f55044eb5e24afaf"
+  },
+  {
+    "name": "internmap",
+    "version": "2.0.3",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/internmap/-/internmap-2.0.3.tgz",
+    "archiveSha256": "39d1936831a4d3f2bd6e088db28a10de4458d823f652c36b2c808bf5b978c48d"
+  },
+  {
+    "name": "is-arguments",
+    "version": "1.2.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/is-arguments/-/is-arguments-1.2.0.tgz",
+    "archiveSha256": "476c29799ec4f51b694d576fc70a27631c8ffe00e4269b7608027e12c7b0e51c"
+  },
+  {
+    "name": "is-callable",
+    "version": "1.2.7",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/is-callable/-/is-callable-1.2.7.tgz",
+    "archiveSha256": "1b5c6e4e8ab142a6857fca2fb79d880ba64f2c4ad87907b583934d04b503c3a1"
+  },
+  {
+    "name": "is-generator-function",
+    "version": "1.0.10",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/is-generator-function/-/is-generator-function-1.0.10.tgz",
+    "archiveSha256": "7100ebf1ed50e34793ad1d1e0c9572dd84fca9d490beb0b5c431a6dd2fc90c47"
+  },
+  {
+    "name": "is-typed-array",
+    "version": "1.1.15",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/is-typed-array/-/is-typed-array-1.1.15.tgz",
+    "archiveSha256": "d1ef6229208ce395c816f88637e45b970f6d742d616d3c980fb0dbb679cb7690"
+  },
+  {
+    "name": "isarray",
+    "version": "1.0.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz",
+    "archiveSha256": "e23c76f14f5222e07e39d89858b61e8e33f96956de9e0df3659cbdf8db950c87"
+  },
+  {
+    "name": "js-yaml",
+    "version": "4.1.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.1.1.tgz",
+    "archiveSha256": "948181607d4fb62dde7b9e04a62d89b20e62cd0c5659ceb711bc31768d00436f"
+  },
+  {
+    "name": "jszip",
+    "version": "3.10.2",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "(MIT OR GPL-3.0-or-later)",
+    "archiveUrl": "https://registry.npmjs.org/jszip/-/jszip-3.10.2.tgz",
+    "archiveSha256": "4ee15dcb3f5433b736a41d091bcad37facee4a4aa96f9e21194789da886ac226"
+  },
+  {
+    "name": "katex",
+    "version": "0.16.45",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/katex/-/katex-0.16.45.tgz",
+    "archiveSha256": "cbd8ffa29008d7a4de4bb2c198716f284677f962967df6e70a69dffdc14001ae"
+  },
+  {
+    "name": "khroma",
+    "version": "2.1.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/khroma/-/khroma-2.1.0.tgz",
+    "archiveSha256": "8963d209f3a682374d7f7e45e5fa361a58fc060c8528df6656fae0fc7c508110"
+  },
+  {
+    "name": "layout-base",
+    "version": "1.0.2",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/layout-base/-/layout-base-1.0.2.tgz",
+    "archiveSha256": "efea1306903d9d043c42c1e7931b2d97b4f519cff04b1347fa308032a52eebab"
+  },
+  {
+    "name": "layout-base",
+    "version": "2.0.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/layout-base/-/layout-base-2.0.1.tgz",
+    "archiveSha256": "34165e46d8c4b9d719a592e39a60fa5f7324c21a3edd02733e1116b17013defd"
+  },
+  {
+    "name": "lie",
+    "version": "3.3.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/lie/-/lie-3.3.0.tgz",
+    "archiveSha256": "2db8461cd4a10e2fc3588c8c55da34d33465ff81cc19c72416bbcaec7ee6a36e"
+  },
+  {
+    "name": "linkify-it",
+    "version": "5.0.0",
+    "bundles": [
+      "markdown-it.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/linkify-it/-/linkify-it-5.0.0.tgz",
+    "archiveSha256": "6144c5a52d26c2bb917bc320d707cf4a41c94514ce856b8b1baf934d3fb27aa9",
+    "inventoryBasis": "Conservative notice from declared dependency minimum; exact bundled revision is not asserted"
+  },
+  {
+    "name": "lodash-es",
+    "version": "4.18.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.18.1.tgz",
+    "archiveSha256": "b0c810e5cd4cd580ed7b18fc71384b9a80c151dc5c85b1729bd656a49e3f16f8"
+  },
+  {
+    "name": "markdown-it",
+    "version": "14.1.0",
+    "bundles": [
+      "markdown-it.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/markdown-it/-/markdown-it-14.1.0.tgz",
+    "archiveSha256": "7c4fab4d4d39fe98206a7fbbed4b1e3578f2b70b6b69d309413e33eec140e19f"
+  },
+  {
+    "name": "marked",
+    "version": "16.3.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/marked/-/marked-16.3.0.tgz",
+    "archiveSha256": "c333c47cd3802a1d631dfdd8c6cfc411a88599a872c04ce8cd2291381a7767a0"
+  },
+  {
+    "name": "math-intrinsics",
+    "version": "1.1.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz",
+    "archiveSha256": "b8c2c35575493dc086df88cfc468a9e2651b6617336480ab3f00fcf853f443a7"
+  },
+  {
+    "name": "mdurl",
+    "version": "2.0.0",
+    "bundles": [
+      "markdown-it.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/mdurl/-/mdurl-2.0.0.tgz",
+    "archiveSha256": "8e0ccb320730dad17981e2a4cc97f34f072366442d000de97070fd1ea21321b5",
+    "inventoryBasis": "Conservative notice from declared dependency minimum; exact bundled revision is not asserted"
+  },
+  {
+    "name": "mermaid",
+    "version": "11.16.1",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/mermaid/-/mermaid-11.16.1.tgz",
+    "archiveSha256": "ebd9885111092c78cefc79a76f6c1dc34ed5b834b02ae8f338227ce79c003de4"
+  },
+  {
+    "name": "minimalistic-assert",
+    "version": "1.0.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz",
+    "archiveSha256": "f16522c947d6dbe3a99f5ff4296ccc253090b838959abdddc45fe81edb03f3a0"
+  },
+  {
+    "name": "nanoid",
+    "version": "3.3.20",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.20.tgz",
+    "archiveSha256": "5ae134779aa22c2c04b691d361bc1f3c004c354e81c7ee166ea1c6e848eedc4f"
+  },
+  {
+    "name": "nanoid",
+    "version": "6.0.2",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/nanoid/-/nanoid-6.0.2.tgz",
+    "archiveSha256": "91f1fbef0fc30de371dbf9dfe668942b317503477d267920c5a9ea9b994be569"
+  },
+  {
+    "name": "pako",
+    "version": "1.0.11",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "(MIT AND Zlib)",
+    "archiveUrl": "https://registry.npmjs.org/pako/-/pako-1.0.11.tgz",
+    "archiveSha256": "0d4028dc0352a740c30cbfd772917f2744986d42bfa0b06ec7642bffe7ad3941"
+  },
+  {
+    "name": "possible-typed-array-names",
+    "version": "1.0.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/possible-typed-array-names/-/possible-typed-array-names-1.0.0.tgz",
+    "archiveSha256": "36f999d2e86e4423100dcc35cae10e3260ea7bae0d3dec7eb2b90a46ead57945"
+  },
+  {
+    "name": "process-nextick-args",
+    "version": "2.0.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz",
+    "archiveSha256": "425bf8c725d23bc5ac76bcedd10d9cdbbd6354c7273dd7def44417cfbca8889b"
+  },
+  {
+    "name": "punycode.js",
+    "version": "2.3.1",
+    "bundles": [
+      "markdown-it.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/punycode.js/-/punycode.js-2.3.1.tgz",
+    "archiveSha256": "8768d89aa6359164220014ba575e1464e3ddff11bedff1cc268e39a21f7324a8",
+    "inventoryBasis": "Conservative notice from declared dependency minimum; exact bundled revision is not asserted"
+  },
+  {
+    "name": "readable-stream",
+    "version": "2.3.8",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.8.tgz",
+    "archiveSha256": "1648613948f68ac9cbbe8f72a3f93a67ecdb862ffb57946a2c0bbb5a1479a532"
+  },
+  {
+    "name": "roughjs",
+    "version": "4.6.6",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/roughjs/-/roughjs-4.6.6.tgz",
+    "archiveSha256": "373873b2c3f1b7ddba878525c774816057c5818029780c7fba081f06018ba78c"
+  },
+  {
+    "name": "safe-buffer",
+    "version": "5.1.2",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz",
+    "archiveSha256": "e09206c60fccafb952c854af7629cbb031a98d6da2e143fb3aa3c8a48402aa22"
+  },
+  {
+    "name": "safe-buffer",
+    "version": "5.2.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz",
+    "archiveSha256": "5d181804516c4a693a384272a7bd0e42d17e0d4b301ccfbe408669ccafdcb3e8"
+  },
+  {
+    "name": "sax",
+    "version": "1.2.4",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "ISC",
+    "archiveUrl": "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz",
+    "archiveSha256": "adc442e017041cffca4d4418d06006ae5f17a9984557fa80c3a6cd8859021cf2"
+  },
+  {
+    "name": "set-function-length",
+    "version": "1.2.2",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/set-function-length/-/set-function-length-1.2.2.tgz",
+    "archiveSha256": "a339df70dfa3507a3fe2137464915212d69a9585d201c253b90f0c13fd952b4a"
+  },
+  {
+    "name": "setimmediate",
+    "version": "1.0.5",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/setimmediate/-/setimmediate-1.0.5.tgz",
+    "archiveSha256": "5cb9fc22698364ed42c02d6aa3dc50ffeafa68452ae84699672e3dfd74922c9e"
+  },
+  {
+    "name": "stream-browserify",
+    "version": "3.0.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/stream-browserify/-/stream-browserify-3.0.0.tgz",
+    "archiveSha256": "376fa4c0ffd38961cf23c210f8a8dbcc46b00862c1d1bce1bbc66f7ea9a433cf"
+  },
+  {
+    "name": "string_decoder",
+    "version": "1.1.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz",
+    "archiveSha256": "af8262434508fa8292407f7fef4690d19eabb73387ca230b41f2a1155216963a"
+  },
+  {
+    "name": "stylis",
+    "version": "4.3.6",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/stylis/-/stylis-4.3.6.tgz",
+    "archiveSha256": "57bd37727276e7e30d2f15472a43c5d5b8ae6cd9cebd36dbb84880c500de568e"
+  },
+  {
+    "name": "ts-dedent",
+    "version": "2.2.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/ts-dedent/-/ts-dedent-2.2.0.tgz",
+    "archiveSha256": "f04cddc15ce3aad91287aebdcb0d6b6997b85222769c35c910038f59bfd2234d"
+  },
+  {
+    "name": "uc.micro",
+    "version": "2.1.0",
+    "bundles": [
+      "markdown-it.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/uc.micro/-/uc.micro-2.1.0.tgz",
+    "archiveSha256": "a31660c690ddac370fe4b17fe6a3a73b8df094f99194ac90d0668d797dabf69b",
+    "inventoryBasis": "Conservative notice from declared dependency minimum; exact bundled revision is not asserted"
+  },
+  {
+    "name": "undici-types",
+    "version": "8.9.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/undici-types/-/undici-types-8.9.0.tgz",
+    "archiveSha256": "3a587851ccbf1021b20eac8a38eb819d7e2a1ab77aa477cb24cae5473a3e78c6"
+  },
+  {
+    "name": "util",
+    "version": "0.12.5",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/util/-/util-0.12.5.tgz",
+    "archiveSha256": "d3b9dac1449f7d6b6995355f5cc73179fec7b90bfa8967ff7d3c0654525ab282"
+  },
+  {
+    "name": "util-deprecate",
+    "version": "1.0.2",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz",
+    "archiveSha256": "79a1de983c1b393180c47456d6b73caab278a00ea6e37d5c6675f2dcdec2a3e5"
+  },
+  {
+    "name": "uuid",
+    "version": "14.0.0",
+    "bundles": [
+      "mermaid.min.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/uuid/-/uuid-14.0.0.tgz",
+    "archiveSha256": "ca468c168ec7f2021f6a98041e943443b29e67e0e0ff5b4c1caca17c6efa9870"
+  },
+  {
+    "name": "vite-plugin-node-polyfills",
+    "version": "0.28.0",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/vite-plugin-node-polyfills/-/vite-plugin-node-polyfills-0.28.0.tgz",
+    "archiveSha256": "c38064a458496d3a7893831629a54a5126536bbaa1e1dd06f13aeba43816d18c"
+  },
+  {
+    "name": "which-typed-array",
+    "version": "1.1.19",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.19.tgz",
+    "archiveSha256": "aaccea91985a6e1731f84192d4682f474aea76f64a210982576e488732b0ad3f"
+  },
+  {
+    "name": "xml",
+    "version": "1.0.1",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/xml/-/xml-1.0.1.tgz",
+    "archiveSha256": "38032bd701fa20427b2ee31ed55e6761ce1a881a6eabcd90005ebe74ab04a623"
+  },
+  {
+    "name": "xml-js",
+    "version": "1.6.11",
+    "bundles": [
+      "docx.iife.js"
+    ],
+    "license": "MIT",
+    "archiveUrl": "https://registry.npmjs.org/xml-js/-/xml-js-1.6.11.tgz",
+    "archiveSha256": "7fa22b957f335efef3ead84aaa8285e2f3b08dbfeee18f9f41021a1a0c584369"
+  }
+]

@@ -1,0 +1,30 @@
+/* Export controller only: A4 with margins supplied by WebView2 PrintSettings. */
+.pdf-export { color-scheme: light; background: white; }
+.pdf-export body.preview-body { padding: 0; width: 680px; background: white; }
+.pdf-export #toolbar, .pdf-export #findbar, .pdf-export #outline,
+.pdf-export #render-status, .pdf-export #pdf-status, .pdf-export #docx-status, .pdf-export #copy-status { display: none !important; }
+.pdf-export .markdown-body, .pdf-export .markdown-body[data-view-zoom] {
+  zoom: 1 !important; width: auto !important; max-width: none; margin: 0 !important; padding: 0;
+  font-size: 14px; line-height: 1.55; overflow-wrap: anywhere;
+}
+.pdf-export h1, .pdf-export h2, .pdf-export h3, .pdf-export h4 { break-after: avoid; }
+.pdf-export p { orphans: 3; widows: 3; }
+.pdf-export pre { white-space: pre-wrap; overflow-wrap: anywhere; overflow: visible; padding: 10px; }
+/* VS Code's inline-block code is an indivisible printing box. A tall fence can
+   push its text beyond a full blank background page in Chromium. Both boxes
+   must participate in normal block fragmentation, including highlighted code. */
+.pdf-export .markdown-body pre, .pdf-export .markdown-body pre code {
+  display: block; break-inside: auto; overflow: visible;
+  white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.pdf-export table { display: table; width: 100%; table-layout: fixed; overflow: visible; font-size: 12px; }
+.pdf-export table th, .pdf-export table td { padding: 5px 7px; overflow-wrap: anywhere; }
+.pdf-export thead { display: table-header-group; }
+.pdf-export tr { break-inside: avoid; }
+.pdf-export .mermaid-diagram { break-inside: avoid; padding: 8px; margin: 14px 0; }
+.pdf-export .mermaid-graphic { overflow: visible; text-align: center; }
+.pdf-export .mermaid-graphic svg { display: block; max-width: 100%; max-height: 235mm; height: auto; margin: 0 auto; }
+.pdf-export .mermaid-source summary { display: none; }
+.pdf-export .pdf-image-error { color: #a11; border: 1px solid #d99; padding: 6px; font-size: 12px; }
+.pdf-export * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+@media print { .pdf-export body.preview-body { width: auto; } }

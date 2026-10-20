@@ -1,0 +1,8 @@
+LIBRARY Markdown_with_Mermaid
+EXPORTS
+    isUnicode
+    setInfo
+    getName
+    getFuncsArray
+    beNotified
+    messageProc

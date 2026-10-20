@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-18",
+  "nppMarkdownPanel": "6b1dcb4adb4fc5786815182e0b0c8259f23b9020",
+  "mermaidVersion": "11.16.1",
+  "files": [
+    {
+      "path": "assets/docx-export.js",
+      "sha256": "48d40088102e34f832f1740f55820aff162a9a3b70c02b86d8c3d5c5bb4fc74f"
+    },
+    {
+      "path": "assets/docx.iife.js",
+      "sha256": "f93503495bfe2ef8a49521dca3c24fe50e12e7a683b82b135d29e05ecaafb0c5"
+    },
+    {
+      "path": "assets/highlight-dark.css",
+      "sha256": "9f208d022102b1d0c7aebfecd8e42ca7997d5de636649d2b31ea63093d809019"
+    },
+    {
+      "path": "assets/highlight-light.css",
+      "sha256": "3a9a5def8b9c311e5ae43abde85c63133185eed4f0d9f67fea4b00a8308cf066"
+    },
+    {
+      "path": "assets/highlight.min.js",
+      "sha256": "c4a399dd6f488bc97a3546e3476747b3e714c99c57b9473154c6fb8d259b9381"
+    },
+    {
+      "path": "assets/markdown-it.min.js",
+      "sha256": "38c70a1e7ca91ab40e2d9e6e60129851a717ed1c7d4acbbdd41bf9503791cf68"
+    },
+    {
+      "path": "assets/mermaid.min.js",
+      "sha256": "18327bef70d96fb505fe7287d9f6a7362ebf07ff6576ddfaffb1a06f3e1a2954"
+    },
+    {
+      "path": "assets/pdf-export.css",
+      "sha256": "4f52ba9de5b6f3214e073d8d2079def095d0e71dc87981f2fc377cacd22e214a"
+    },
+    {
+      "path": "assets/purify.min.js",
+      "sha256": "cd37898f9782adf54820c413191b5691803f0f137c799d6edcfd38523b4c2c31"
+    },
+    {
+      "path": "assets/selection.js",
+      "sha256": "7d1b65aafcc737dbc24719daa6e032a10f89007e520c3874bffa06e0609f4fee"
+    },
+    {
+      "path": "assets/viewer.css",
+      "sha256": "f0ca9196834fbbd61525503ab14337ec6c5a2a21c8e6d96c14780a6af90c74eb"
+    },
+    {
+      "path": "assets/viewer.html",
+      "sha256": "c4b7761abbfea8e797e7ce6598c87063c3192a5f9901ea741e204b29dbe3e318"
+    },
+    {
+      "path": "assets/viewer.js",
+      "sha256": "cb530330465d7358248581ffe50ea928cb9e042c7f01401a7f84ebd6124deb5a"
+    },
+    {
+      "path": "assets/vscode-markdown.css",
+      "sha256": "31acba626be3846f2a9b78421ce55e94feb5446d2b39bd06ab0453c0a010092d"
+    },
+    {
+      "path": "assets/vscode-slugify.js",
+      "sha256": "600a03284e2e3dfb971818a289c1a6a6405da775900a7073033786e7bebb055d"
+    },
+    {
+      "path": "assets/icons/markdown-mermaid.svg",
+      "sha256": "798f3932fa6fbd6d27367f40bdcfe45962d7506f8ff0fdb343171609a1285a2d"
+    },
+    {
+      "path": "assets/icons/mermaid-preview.png",
+      "sha256": "a90c92109cedfa0e5527f103cd36a592ee2ccda2d01d656702bd5148d7874c0e"
+    },
+    {
+      "path": "assets/icons/mermaid.bmp",
+      "sha256": "caefea8d8484280346647e3b8501f0d7ae777145c7f618b9659d415cfea98056"
+    },
+    {
+      "path": "assets/icons/mermaid.ico",
+      "sha256": "a1aa0f125aa4dde2b4ec0993afd0a58946c0b5799f1a343277339bd57afdc116"
+    },
+    {
+      "path": "assets/icons/mermaid.svg",
+      "sha256": "9f9f532d7d58439c63bd57069d708fc281765165b912719b9629a0f783a545c4"
+    },
+    {
+      "path": "assets/icons/SOURCE.md",
+      "sha256": "e525ad41327b4eb341d0b63a23b0912ecfd142e20f7884bc8961316309e5d43b"
+    },
+    {
+      "path": "vendor/npp-sdk/Docking.h",
+      "sha256": "7aa49d5fb1a9e5dbf62a30c5698866a4e6b1922a44d15867e054ff7cd0396477"
+    },
+    {
+      "path": "vendor/npp-sdk/Notepad_plus_msgs.h",
+      "sha256": "17239c47f521f8e33689ecf7ddc5d68abe278837fe16484b9de1fc12636ab474"
+    },
+    {
+      "path": "vendor/npp-sdk/PluginInterface.h",
+      "sha256": "33615003d321a654191d22d4e39a2188c9d42a3d837144f6f2039cc58cd7e1f4"
+    },
+    {
+      "path": "vendor/npp-sdk/Scintilla.h",
+      "sha256": "4d098ac1db2ff88f534b5e2b7c8bf01894dd515351c43079e1086db88647d835"
+    },
+    {
+      "path": "vendor/npp-sdk/Sci_Position.h",
+      "sha256": "8b72e5c0b677abafc97d90588b05ae9adfc568e6ee119f2e10967703ee230653"
+    }
+  ]
+}

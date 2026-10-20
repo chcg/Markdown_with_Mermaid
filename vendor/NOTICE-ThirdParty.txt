@@ -1,0 +1,34 @@
+Markdown_with_Mermaid - third-party source notices
+
+Project-authored code is offered under the MIT license in LICENSE.
+Copyright (c) 2026 Artyom Nikiforov (rhyots)
+https://github.com/rhyots
+
+This does not replace the licenses and copyright notices of third-party files.
+Keep the license files in this directory and notices embedded in JS bundles.
+
+Known source components:
+
+NppMarkdownPanel: MIT; LICENSE-NppMarkdownPanel.txt.
+Markdown View: MIT; LICENSE-MarkdownView.txt.
+VS Code Markdown CSS and slug handling: MIT; LICENSE-vscode.txt.
+Mermaid: MIT; LICENSE-Mermaid.txt. Bundled dependency notices remain in mermaid.min.js.
+markdown-it: MIT; LICENSE-markdown-it.txt.
+highlight.js: BSD-3-Clause; LICENSE-highlight.js.txt.
+DOMPurify: dual Apache-2.0/MPL-2.0; Apache text in LICENSE-DOMPurify.txt.
+This distribution selects the Apache-2.0 alternative for DOMPurify and the MIT
+alternative for bundled JSZip. Preserve all original supplied notices.
+docx: MIT; LICENSE-docx.txt. Notices for bundled code remain in docx.iife.js.
+WebView2 SDK/loader: Microsoft redistribution terms; LICENSE-WebView2.txt and NOTICE-WebView2.txt.
+Notepad++ SDK headers: preserve their GPL-3.0-or-later headers and LICENSE-Notepad++.txt.
+Scintilla interface headers: LICENSE-Scintilla.txt.
+The GPL-marked Notepad++ headers are used by the build. Their effect on plugin
+distribution remains an open release question; see docs/LICENSING.md.
+Keeping these notices does not itself clear the whole binary as MIT-only.
+Build/runtime components: see LICENSE-Zig.txt, LICENSE-mingw.txt,
+LICENSE-libcxx.txt, LICENSE-libcxxabi.txt and LICENSE-libunwind.txt.
+
+Full texts for the audited bundled JavaScript dependencies are collected in
+NOTICE-BundledDependencies.txt, with an inventory in bundled-dependencies.json.
+Preserve the original inline notices too. Source-map/lock evidence and the
+collection report are retained with the private release preparation records.

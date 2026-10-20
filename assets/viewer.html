@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'nonce-__MV_NONCE__'; style-src 'unsafe-inline' file:; img-src file: https: http: data:; font-src file: data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri file:; form-action 'none'">
+  <base href="__MV_DOCUMENT_BASE__">
+  <title>Markdown_with_Mermaid</title>
+  <link rel="stylesheet" href="__MV_ASSET_BASE__vscode-markdown.css">
+  <link rel="stylesheet" href="__MV_ASSET_BASE__viewer.css"><link rel="stylesheet" href="__MV_ASSET_BASE__pdf-export.css">
+  <link rel="stylesheet" id="highlight-theme" href="__MV_ASSET_BASE__highlight-light.css">
+</head>
+<body class="vscode-body preview-body">
+  <header id="toolbar">
+    <div id="toolbar-actions" role="toolbar" aria-label="Markdown preview">
+      <div id="view-controls">
+        <button id="outline-button" title="Toggle outline" aria-label="Outline" aria-expanded="false" aria-controls="outline"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2v10h3M3 6h3M8 3h6M8 7h6M8 12h6"/></svg></button>
+        <span class="toolbar-separator" aria-hidden="true"></span>
+        <div id="navigation-controls" role="group" aria-label="Navigation history">
+          <button id="history-back" title="Go back" aria-label="Go back" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M7 3L2 8l5 5M2 8h12"/></svg></button>
+          <button id="history-forward" title="Go forward" aria-label="Go forward" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3l5 5-5 5M14 8H2"/></svg></button>
+        </div>
+        <span class="toolbar-separator" aria-hidden="true"></span>
+        <button id="copy" title="Copy formatted text (Ctrl+C)" aria-label="Copy formatted text (Ctrl+C)"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="5.5" width="8" height="8" rx="1.3"/><path d="M5.5 5.5v-2a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2"/></svg></button>
+        <div id="zoom-controls" role="group" aria-label="Document zoom">
+          <button id="zoom-out" title="Zoom out" aria-label="Zoom out"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+          <div id="zoom-combo">
+            <input id="zoom-value" type="text" inputmode="decimal" value="100%" maxlength="9" aria-label="Zoom percentage" title="Enter zoom from 10% to 6400%">
+            <select id="zoom-presets" aria-label="Choose zoom" title="Choose zoom"><option value="" hidden></option><optgroup label="Zoom"><option value="10">10%</option><option value="25">25%</option><option value="50">50%</option><option value="75">75%</option><option value="100" selected>100%</option><option value="125">125%</option><option value="150">150%</option><option value="200">200%</option><option value="400">400%</option><option value="800">800%</option><option value="1600">1600%</option><option value="2400">2400%</option><option value="3200">3200%</option><option value="6400">6400%</option></optgroup><optgroup label="Fit"><option value="actual">Actual size (100%)</option><option value="width">Fit to width</option><option value="content">Fit to content</option></optgroup></select>
+          </div>
+          <button id="zoom-in" title="Zoom in" aria-label="Zoom in"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3v10"/></svg></button>
+        </div>
+        <button id="theme-button" title="Switch to dark theme" aria-label="Switch to dark theme" aria-pressed="false"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5a5.5 5.5 0 0 1 0 11Z" fill="currentColor"/></svg></button>
+      </div>
+      <div id="export-controls" role="group" aria-label="Document export">
+        <button id="export" title="Export to HTML" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 1.5H3v13h10v-9L9 1.5v4h4M6 8l-2 2 2 2M10 8l2 2-2 2"/></svg><span>HTML</span></button>
+        <button id="export-pdf" title="Export to PDF"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 1.5H3v13h10v-9L9 1.5v4h4M8 7v5M6 10l2 2 2-2"/></svg><span>PDF</span></button>
+        <button id="export-docx" title="Export to DOCX"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 1.5H3v13h10v-9L9 1.5v4h4M5 8l1 4 2-3 2 3 1-4"/></svg><span>DOCX</span></button>
+      </div>
+    </div>
+    <div id="document-info"><button id="filename-copy" type="button" title="Copy filename as plain text" aria-label="Copy filename as plain text"><svg class="filename-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M9 1.5H3v13h10v-9L9 1.5v4h4M5 8h6M5 11h6"/></svg><svg class="filename-copied" viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg></button><span id="filename"></span></div>
+    <div id="navigation-status" role="status" hidden></div>
+  </header>
+  <form id="findbar" hidden><input id="query" type="search" aria-label="Search document" placeholder="Find in document"><button type="submit" title="Find next match" aria-label="Find next match">Next</button><button id="find-prev" type="button" title="Find previous match" aria-label="Find previous match">↑</button><button id="find-close" type="button" title="Close search" aria-label="Close search">×</button><span id="find-status" role="status"></span></form>
+  <nav id="outline" aria-label="Outline" hidden></nav><main class="markdown-body" dir="auto"></main><footer id="render-status" role="status"></footer><div id="pdf-status" role="status"></div><div id="docx-status" role="status"></div>
+  <script nonce="__MV_NONCE__" src="__MV_ASSET_BASE__markdown-it.min.js"></script>
+  <script nonce="__MV_NONCE__" src="__MV_ASSET_BASE__highlight.min.js"></script>
+  <script nonce="__MV_NONCE__" src="__MV_ASSET_BASE__purify.min.js"></script>
+  <script nonce="__MV_NONCE__" src="__MV_ASSET_BASE__mermaid.min.js"></script>
+  <script nonce="__MV_NONCE__" src="__MV_ASSET_BASE__vscode-slugify.js"></script>
+  <script nonce="__MV_NONCE__">window.markdownViewData = __MV_PAYLOAD__;</script>
+  <div id="copy-status" role="status"></div>
+  <script nonce="__MV_NONCE__" src="__MV_ASSET_BASE__selection.js"></script>
+  <script nonce="__MV_NONCE__" src="__MV_ASSET_BASE__viewer.js"></script>
+</body>
+</html>

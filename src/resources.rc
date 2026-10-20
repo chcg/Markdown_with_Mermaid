@@ -1,0 +1,33 @@
+#include "resource.h"
+#include "../build/plugin-version.h"
+IDI_MERMAID ICON "../assets/icons/mermaid.ico"
+IDB_MERMAID BITMAP "../assets/icons/mermaid.bmp"
+
+1 VERSIONINFO
+FILEVERSION MWM_FILE_VERSION
+PRODUCTVERSION MWM_FILE_VERSION
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x0L
+FILEOS 0x40004L
+FILETYPE 0x2L
+FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Artyom Nikiforov (rhyots)\0"
+            VALUE "FileDescription", "Markdown with Mermaid preview for Notepad++\0"
+            VALUE "FileVersion", MWM_FILE_VERSION_STRING
+            VALUE "InternalName", "Markdown_with_Mermaid\0"
+            VALUE "LegalCopyright", "Copyright (c) 2026 Artyom Nikiforov (rhyots)\0"
+            VALUE "OriginalFilename", "Markdown_with_Mermaid.dll\0"
+            VALUE "ProductName", "Markdown_with_Mermaid\0"
+            VALUE "ProductVersion", MWM_FILE_VERSION_STRING
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END
