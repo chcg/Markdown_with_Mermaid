@@ -141,4 +141,4 @@ img { max-width: 100%; height: auto; }
 .alert-warning,.alert-caution { border-left-color:#bf8700; }
 .code-line { scroll-margin-top:calc(var(--preview-header-height) + 16px); }
 button:disabled { opacity:.4; cursor:default; }
-@media print { #outline,#render-status,.diagram-tools { display:none; } }
+@media print { #outline,#render-status,.diagram-tools,#source-jump-space { display:none; } }

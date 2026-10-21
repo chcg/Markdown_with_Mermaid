@@ -32,7 +32,7 @@ foreach ($arch in $Architecture) {
     New-Item -ItemType Directory -Force "$out/docs" | Out-Null
     Copy-Item docs/PDF-EXPORT.md,docs/DOCX-EXPORT.md,docs/DATA-PRIVACY.md,docs/LICENSING.md "$out/docs"
     if (Test-Path -LiteralPath docs/screenshots) { Copy-Item -LiteralPath docs/screenshots -Destination "$out/docs/screenshots" -Recurse }
-    foreach ($optionalDoc in @('BUILDING.md','TESTING.md','BUILD-WORKFLOW.yml')) {
+    foreach ($optionalDoc in @('BUILDING.md','TESTING.md','BUILD-WORKFLOW.yml','USAGE.md','USAGE.ru.md','Mermaid-examples.md')) {
         $documentationPath = Join-Path $PSScriptRoot "docs/$optionalDoc"
         if (Test-Path -LiteralPath $documentationPath) { Copy-Item -LiteralPath $documentationPath -Destination "$out/docs" }
     }

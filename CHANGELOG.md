@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.4.1 — 2026-10-21
+
+- Consolidate the tested RC2 fixes: exact source-line navigation with top
+  alignment and readable Mermaid node/container borders in both themes.
+- Present the plugin with matching English/Russian guides, diagram-first
+  animated demos and offline examples.
+- Rebuild x64 and x86 Release packages with Windows version 1.4.1.0.
+  Runtime implementation and bundled dependencies are unchanged from the
+  accepted RC2 baseline. Both architectures passed 26 fresh native startup/API/runtime checks.
+
+## 1.4.0-rc.2 — local candidate
+
+- Refresh the bilingual README with diagram-first demos, local GIF/PNG media,
+  user guides and current compatibility/validation status.
+
+- Align the source line and Preview target at the top after a Preview double-click,
+  including wrapped/folded source and near-end Preview content with scroll sync off.
+- Keep navigation-only scroll space outside copied/exported Markdown content.
+- Resolve double-clicks inside highlighted code and multiline paragraphs to the
+  clicked physical source line at either zoom and with scroll synchronization off.
+- Keep Mermaid node and container outlines visible against both adjacent fills
+  in light/dark themes, including authored nested container colors.
+
 ## 1.4.0 — release candidate
 
 - Copy the complete filename as plain text with the header's file icon button;

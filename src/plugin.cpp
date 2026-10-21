@@ -120,7 +120,14 @@ static void jumpToLine(int line) {
     HWND sci = editor();
     auto count = SendMessageW(sci, SCI_GETLINECOUNT, 0, 0);
     if (line >= count) return;
+    SendMessageW(sci, SCI_ENSUREVISIBLE, line, 0);
     SendMessageW(sci, SCI_GOTOLINE, line, 0); SetFocus(sci);
+    // GOTOLINE only reveals the caret, often at the bottom of the viewport.
+    // Convert after unfolding: wrapped/folded display lines differ from source lines.
+    const auto first = SendMessageW(sci, SCI_VISIBLEFROMDOCLINE, line, 0);
+    if (first >= 0) SendMessageW(sci, SCI_SETFIRSTVISIBLELINE, first, 0);
+    // Explicit navigation aligns both panes even when scroll following is disabled.
+    if (panel) panel->script(L"window.markdownView.scrollToLine(" + std::to_wstring(line) + L",true)");
 }
 static std::wstring currentPath() {
     wchar_t name[32768]{};

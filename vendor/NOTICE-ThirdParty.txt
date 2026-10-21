@@ -1,11 +1,7 @@
 Markdown_with_Mermaid - third-party source notices
 
-Project-authored code is offered under the MIT license in LICENSE.
 Copyright (c) 2026 Artyom Nikiforov (rhyots)
 https://github.com/rhyots
-
-This does not replace the licenses and copyright notices of third-party files.
-Keep the license files in this directory and notices embedded in JS bundles.
 
 Known source components:
 
@@ -22,9 +18,6 @@ docx: MIT; LICENSE-docx.txt. Notices for bundled code remain in docx.iife.js.
 WebView2 SDK/loader: Microsoft redistribution terms; LICENSE-WebView2.txt and NOTICE-WebView2.txt.
 Notepad++ SDK headers: preserve their GPL-3.0-or-later headers and LICENSE-Notepad++.txt.
 Scintilla interface headers: LICENSE-Scintilla.txt.
-The GPL-marked Notepad++ headers are used by the build. Their effect on plugin
-distribution remains an open release question; see docs/LICENSING.md.
-Keeping these notices does not itself clear the whole binary as MIT-only.
 Build/runtime components: see LICENSE-Zig.txt, LICENSE-mingw.txt,
 LICENSE-libcxx.txt, LICENSE-libcxxabi.txt and LICENSE-libunwind.txt.
 

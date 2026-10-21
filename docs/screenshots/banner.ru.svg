@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="240" viewBox="0 0 1280 240" role="img" aria-labelledby="title desc">
+<title id="title">Простой текст. Наглядные идеи.</title><desc id="desc">Markdown with Mermaid: Пишите → Смотрите → Делитесь.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101827"/><stop offset="1" stop-color="#1e2340"/></linearGradient><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8" fill="none" stroke="#b3c4da" stroke-width="1.4"/></marker></defs>
+<rect width="1280" height="240" rx="20" fill="url(#bg)"/>
+<g font-family="Segoe UI,Arial,sans-serif"><text x="44" y="58" font-size="14" letter-spacing="2" fill="#a8b9d5">MARKDOWN + MERMAID  /  ВНУТРИ NOTEPAD++</text><text x="44" y="118" font-size="35" font-weight="650" fill="#f8fafc">Простой текст. Наглядные идеи.</text>
+<text x="46" y="174" font-size="17" fill="#c4cce3">HTML · PDF · DOCX</text>
+<path d="M890 126h15 M1040 126h15" stroke="#b3c4da" stroke-width="2" marker-end="url(#arrow)"/><rect x="760" y="96" width="128" height="60" rx="14" fill="#242e46" stroke="#9b8cff" stroke-width="2"/><text x="824" y="133" text-anchor="middle" font-size="20" fill="#f8fafc">Пишите</text><rect x="910" y="96" width="128" height="60" rx="14" fill="#314367" stroke="#9b8cff" stroke-width="2"/><text x="974" y="133" text-anchor="middle" font-size="20" fill="#f8fafc">Смотрите</text><rect x="1060" y="96" width="128" height="60" rx="14" fill="#123e45" stroke="#64dfcd" stroke-width="2"/><text x="1124" y="133" text-anchor="middle" font-size="20" fill="#f8fafc">Делитесь</text>
+<circle cx="49" cy="210" r="3" fill="#64dfcd"/><text x="62" y="215" font-size="12" fill="#a8b9d5">Windows · x64 / x86</text></g></svg>

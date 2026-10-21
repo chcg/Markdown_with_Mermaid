@@ -16,6 +16,7 @@ static std::string textBuffer;
 static std::wstring documentPath;
 static int activeView = 0, firstLine = 0, jumpedLine = -1;
 static int wrappedDocumentLine = -1, firstWrappedDisplayLine = 0, displayedWrapCount = 1;
+static int ensuredLine = -1;
 static UINT textCodepage = CP_UTF8;
 static std::string editorSelection;
 static int editorCopyCommands = 0;
@@ -62,6 +63,8 @@ static LRESULT CALLBACK hostProc(HWND hwnd, UINT message, WPARAM wp, LPARAM lp) 
     // Scintilla 5.1.5+ excludes the terminating NUL from the returned length.
     case SCI_GETSELTEXT: if (lp) memcpy((void*)lp, editorSelection.c_str(), editorSelection.size() + 1); return editorSelection.size();
     case SCI_GETFIRSTVISIBLELINE: return firstLine;
+    case SCI_SETFIRSTVISIBLELINE: firstLine = (int)wp; return 0;
+    case SCI_ENSUREVISIBLE: ensuredLine = (int)wp; return 0;
     case SCI_DOCLINEFROMVISIBLE: return wrappedDocumentLine >= 0 ? wrappedDocumentLine : wp;
     case SCI_VISIBLEFROMDOCLINE: return wrappedDocumentLine >= 0 ? firstWrappedDisplayLine : wp;
     case SCI_WRAPCOUNT: return displayedWrapCount;
@@ -360,6 +363,8 @@ static bool edgeLabelTests(const std::wstring& fixtures, const std::wstring& pre
         ok &= check(eval(darkTheme ? L"getComputedStyle(document.querySelector('.mermaid-graphic').shadowRoot.querySelector('.edgeLabel rect')).fill==='rgb(30, 30, 30)'" : L"getComputedStyle(document.querySelector('.mermaid-graphic').shadowRoot.querySelector('.edgeLabel rect')).fill==='rgb(255, 255, 255)'") == L"true", "root label background matches the diagram surface");
         ok &= check(eval(L"getComputedStyle(document.querySelectorAll('.mermaid-graphic')[1].shadowRoot.querySelector('.edgeLabel rect')).fill==='rgb(255, 242, 204)'") == L"true", "nested label background matches the innermost colored container");
         if (darkTheme) ok &= check(eval(L"[...document.querySelectorAll('.mermaid-graphic')[1].shadowRoot.querySelectorAll('.edgeLabel text,.edgeLabel tspan')].filter(t=>t.textContent.trim()&&t.getBoundingClientRect().width>0).every(t=>__contrastRatio(getComputedStyle(t).fill,'rgb(255, 242, 204)')>=4.5)") == L"true", "labels stay readable on a light colored container in dark theme");
+        ok &= check(eval(L"(()=>{const s=document.querySelectorAll('.mermaid-graphic')[1].shadowRoot;return [...s.querySelectorAll('.node > rect:not([aria-hidden=true])')].every(r=>{const c=getComputedStyle(r);return __contrastRatio(c.stroke,c.fill)>=3&&__contrastRatio(c.stroke,'rgb(255, 242, 204)')>=3&&+c.strokeOpacity===1&&parseFloat(c.strokeWidth)>=1.25})})()")==L"true",darkTheme?"dark node borders contrast with both authored fills and surrounding container":"light node borders contrast with both authored fills and surrounding container");
+        ok &= check(eval((std::wstring(L"(()=>{const s=document.querySelectorAll('.mermaid-graphic')[1].shadowRoot;return [...s.querySelectorAll('.cluster > rect:not([aria-hidden=true])')].every(r=>{const c=getComputedStyle(r),outer=r.parentElement.id.endsWith('-OUTER'),paper=outer?'")+(darkTheme?L"rgb(30, 30, 30)":L"rgb(255, 255, 255)")+L"':'rgb(229, 241, 255)';return __contrastRatio(c.stroke,c.fill)>=3&&__contrastRatio(c.stroke,paper)>=3&&+c.strokeOpacity===1})})()").c_str())==L"true",darkTheme?"dark nested container borders contrast on both sides":"light nested container borders contrast on both sides");
         capture(prefix + (darkTheme ? L"-edge-labels-dark.png" : L"-edge-labels-light.png"));
     }
     ok &= check(pdfTest(prefix + L"-edge-labels.pdf"), "PDF exports readable vector edge labels");
@@ -505,6 +510,85 @@ static bool zoomTests(const wchar_t* fixtures) {
     return ok;
 }
 
+static bool sourceJumpTests() {
+    bool ok = true;
+    const auto savedPath = documentPath; const auto savedText = textBuffer;
+    const auto savedFirst = firstLine; const bool savedSync = syncScroll;
+    documentPath = moduleDirectory() + L"\\rc2-jump-top.md";
+    textBuffer = "# Jump alignment\n\n";
+    for (int i=0; i<90; ++i) textBuffer += "Paragraph " + std::to_string(i) + ". Source navigation fixture.\n\n";
+    const int targetLine = std::count(textBuffer.begin(), textBuffer.end(), '\n');
+    textBuffer += "## Near-end **target**\n\nShort tail.\n\n[Local link](#jump-alignment)\n";
+    panel->load();
+    ok &= check(waitFor(L"!!document.getElementById('near-end-target') && window.markdownView.mermaidReady"), "source jump near-end fixture renders");
+    for (const bool follow : {false,true}) for (const int zoom : {100,200}) {
+        syncScroll = follow; firstLine = 0; jumpedLine = ensuredLine = -1;
+        eval((L"window.markdownView.setZoom("+std::to_wstring(zoom)+L");window.scrollTo(0,0);document.querySelector('#near-end-target strong').dispatchEvent(new MouseEvent('dblclick',{bubbles:true}))").c_str());
+        ok &= check(waitFor(L"Math.abs(document.getElementById('near-end-target').getBoundingClientRect().top-document.getElementById('toolbar').offsetHeight-12)<3"), "double-click aligns near-end Preview target below fixed toolbar at either zoom/sync mode");
+        pump(150);
+        ok &= check(jumpedLine == targetLine && firstLine == targetLine && ensuredLine == targetLine, "double-click reveals source and places its line at the top of the editor");
+        SCNotification scroll{}; scroll.nmhdr.code=SCN_UPDATEUI;scroll.nmhdr.hwndFrom=editor();scroll.updated=SC_UPDATE_V_SCROLL;beNotified(&scroll);pump(150);
+        ok &= check(eval(L"Math.abs(document.getElementById('near-end-target').getBoundingClientRect().top-document.getElementById('toolbar').offsetHeight-12)<3")==L"true", "editor scroll notification does not undo explicit Preview alignment");
+    }
+    ok &= check(eval(L"!!document.getElementById('source-jump-space') && !document.querySelector('.markdown-body').contains(document.getElementById('source-jump-space'))")==L"true", "near-end navigation space is outside Markdown and export/copy content");
+    wrappedDocumentLine=targetLine;firstWrappedDisplayLine=700;displayedWrapCount=4;firstLine=703;
+    jumpToLine(targetLine);pump(150);
+    ok &= check(firstLine==700 && editorLine()==targetLine, "source jump uses first wrapped display line instead of the document line number");
+    const int previousJump=jumpedLine,previousFirst=firstLine;
+    jumpToLine(-1);jumpToLine(10000);
+    ok &= check(jumpedLine==previousJump && firstLine==previousFirst, "invalid source navigation does not change the caret or viewport");
+    eval(L"document.querySelector('.markdown-body a').dispatchEvent(new MouseEvent('dblclick',{bubbles:true}))");pump(100);
+    ok &= check(jumpedLine==previousJump, "double-click on a link is not converted into a source jump");
+    syncScroll=savedSync;firstLine=savedFirst;wrappedDocumentLine=-1;displayedWrapCount=1;
+    eval(L"window.markdownView.setZoom(100)");
+    documentPath=savedPath;textBuffer=savedText;panel->load();
+    ok &= check(waitFor(L"document.querySelectorAll('table tbody tr').length===3 && window.markdownView.mermaidReady && !document.getElementById('source-jump-space')"), "navigation space is cleared when another document opens");
+    return ok;
+}
+static bool interiorSourceJumpTests() {
+    bool ok=true;
+    const auto savedPath=documentPath;const auto savedText=textBuffer;const bool savedSync=syncScroll;
+    documentPath=moduleDirectory()+L"\\interior-jump.md";
+    textBuffer="# Interior source jump\n\n```cpp\n";
+    for(int i=0;i<110;++i)textBuffer+="const int CLICK_"+std::to_string(i)+" = "+std::to_string(i)+";\n";
+    textBuffer+="```\n\n";
+    const int paragraphLine=std::count(textBuffer.begin(),textBuffer.end(),'\n');
+    for(int i=0;i<5;++i)textBuffer+="PARACLICK_"+std::to_string(i)+" **formatted bold** text and Кириллица.\n";
+    textBuffer+="\n";
+    for(int i=0;i<80;++i)textBuffer+="Tail paragraph "+std::to_string(i)+".\n\n";
+    syncScroll=false;panel->load();
+    ok &= check(waitFor(L"document.querySelector('h1')?.textContent==='Interior source jump' && window.markdownView.mermaidReady"),"interior double-click fixture renders");
+    eval(LR"JS(
+      window.__clickText=needle=>{
+        const walker=document.createTreeWalker(document.querySelector('.markdown-body'),NodeFilter.SHOW_TEXT);let node;
+        while(node=walker.nextNode()){
+          const index=node.data.indexOf(needle);if(index<0)continue;
+          const range=document.createRange();range.setStart(node,index);range.setEnd(node,index+1);
+          const r=range.getBoundingClientRect();
+          node.parentElement.dispatchEvent(new MouseEvent('dblclick',{bubbles:true,clientX:r.left+r.width/2,clientY:r.top+r.height/2}));
+          return true;
+        }return false;
+      };
+      window.__clickedTop=needle=>{
+        const walker=document.createTreeWalker(document.querySelector('.markdown-body'),NodeFilter.SHOW_TEXT);let node;
+        while(node=walker.nextNode()){const i=node.data.indexOf(needle);if(i<0)continue;const r=document.createRange();r.setStart(node,i);r.setEnd(node,i+1);return Math.abs(r.getBoundingClientRect().top-document.getElementById('toolbar').offsetHeight-12)<3;}return false;
+      };
+    )JS");
+    for(const bool follow:{false,true})for(const int zoom:{100,200}){
+        syncScroll=follow;jumpedLine=-1;
+        eval((L"window.markdownView.setZoom("+std::to_wstring(zoom)+L");window.markdownView.scrollToLine(80);__clickText('CLICK_77')").c_str());pump(150);
+        ok &= check(jumpedLine==80&&firstLine==80,"double-click maps highlighted interior code text to its physical source line at either zoom/sync mode");
+        ok &= check(eval(L"__clickedTop('CLICK_77')")==L"true","double-click keeps the clicked code line at the top instead of the opening fence");
+        jumpedLine=-1;
+        eval((L"window.markdownView.scrollToLine("+std::to_wstring(paragraphLine+3)+L");__clickText('PARACLICK_3')").c_str());pump(150);
+        ok &= check(jumpedLine==paragraphLine+3&&firstLine==paragraphLine+3,"double-click maps soft-break paragraph text through inline formatting to its physical source line");
+        ok &= check(eval(L"__clickedTop('PARACLICK_3')")==L"true","double-click aligns the selected paragraph source line in Preview");
+    }
+    syncScroll=savedSync;documentPath=savedPath;textBuffer=savedText;
+    eval(L"window.markdownView.setZoom(100)");panel->load();
+    ok &= check(waitFor(L"document.querySelectorAll('table tbody tr').length===3 && window.markdownView.mermaidReady"),"original document restores after interior double-click regression");
+    return ok;
+}
 static bool scrollSyncTests() {
     bool ok = true;
     const auto savedPath = documentPath; const auto savedText = textBuffer;
@@ -735,6 +819,16 @@ int wmain(int argc, wchar_t** argv) {
         "toolbar registration reuses retained image handles");
     funcs[0]._pFunc();
     if (!check(waitFor(L"!!window.markdownView && document.querySelectorAll('table tbody tr').length === 3"), "preview initializes in real WebView2")) return 1;
+    if (GetEnvironmentVariableW(L"MWM_REPORTED_ONLY", nullptr, 0)) {
+        ok &= interiorSourceJumpTests();ok &= edgeLabelTests(argv[1],argv[2]);
+        notify(NPPN_SHUTDOWN);pump(500);DestroyWindow(parent);
+        puts(ok ? "ALL REPORTED BUG TESTS PASSED" : "REPORTED BUG TESTS FAILED");return ok ? 0 : 1;
+    }
+    if (GetEnvironmentVariableW(L"MWM_JUMP_ONLY", nullptr, 0)) {
+        ok &= sourceJumpTests();
+        notify(NPPN_SHUTDOWN);pump(500);DestroyWindow(parent);
+        puts(ok ? "ALL SOURCE JUMP TESTS PASSED" : "SOURCE JUMP TESTS FAILED");return ok ? 0 : 1;
+    }
     ok &= filenameCopyTests();
     if (GetEnvironmentVariableW(L"MWM_FILENAME_COPY_ONLY", nullptr, 0)) {
         notify(NPPN_SHUTDOWN); pump(500); DestroyWindow(parent);
@@ -742,6 +836,8 @@ int wmain(int argc, wchar_t** argv) {
     }
     const auto initialDocument = documentPath;
     ok &= scrollSyncTests();
+    ok &= sourceJumpTests();
+    ok &= interiorSourceJumpTests();
     if (GetEnvironmentVariableW(L"MWM_SCROLL_ONLY", nullptr, 0)) {
         notify(NPPN_SHUTDOWN);pump(500);DestroyWindow(parent);
         puts(ok ? "ALL SCROLL SYNC TESTS PASSED" : "SCROLL SYNC TESTS FAILED");return ok ? 0 : 1;

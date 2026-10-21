@@ -200,6 +200,49 @@
       context.globalAlpha = opacity; context.fillStyle = color; context.fillRect(0, 0, 1, 1); context.globalAlpha = 1;
       return contrast(luminance([...context.getImageData(0, 0, 1, 1).data].slice(0, 3)), luminance(paper));
     };
+    // Node and container outlines must contrast with BOTH adjacent surfaces.
+    // A dark-theme stroke is not necessarily readable on an authored light fill.
+    for (const { shape } of surfaces) {
+      if (!shape.closest('.node,.cluster,.statediagram-state,.classGroup,.actor,.entityBox,.mindmap-node') ||
+          shape.closest('.edgeLabel,.classLabel,.label,.cluster-label') || !shape.getTotalLength) continue;
+      const css = getComputedStyle(shape);
+      if (css.stroke === 'none') continue; // retain deliberately absent decoration
+      const length = shape.getTotalLength(), matrix = shape.getScreenCTM();
+      if (!length || !matrix) continue;
+      const width = Math.max(1.25, parseFloat(css.strokeWidth) || 1);
+      const papers = [];
+      for (const fraction of [.08, .25, .42, .58, .75, .92]) {
+        const at = length * fraction, epsilon = Math.min(.5, length / 100);
+        const point = shape.getPointAtLength(at).matrixTransform(matrix);
+        const before = shape.getPointAtLength(at - epsilon).matrixTransform(matrix);
+        const after = shape.getPointAtLength(at + epsilon).matrixTransform(matrix);
+        const dx = after.x - before.x, dy = after.y - before.y, distance = Math.hypot(dx, dy);
+        if (!distance) continue;
+        const padding = Math.max(2, width + 1), nx = -dy / distance * padding, ny = dx / distance * padding;
+        papers.push(backgroundAt(point.x + nx, point.y + ny, true), backgroundAt(point.x - nx, point.y - ny, true));
+      }
+      if (!papers.length) continue;
+      const score = (color, opacity = 1) => Math.min(...papers.map(paper => strokeContrast(color, opacity, paper)));
+      let ink = css.stroke;
+      if (score(ink, Number(css.strokeOpacity) * Number(css.opacity)) < 3) {
+        const candidates = ['#24292f', '#ffffff', '#000000', ...Array.from({length:15}, (_, i) => {
+          const component = ((i + 1) * 16).toString(16).padStart(2, '0'); return '#' + component.repeat(3);
+        })];
+        ink = candidates.sort((a, b) => score(b) - score(a))[0];
+        shape.style.setProperty('stroke', ink, 'important');
+        shape.style.setProperty('stroke-opacity', '1', 'important'); shape.style.setProperty('opacity', '1', 'important');
+        if (score(ink) < 3) {
+          // Unusual multicolor surfaces can require a two-color outline.
+          const halo = shape.cloneNode(false); halo.removeAttribute('id'); halo.removeAttribute('class');
+          halo.setAttribute('aria-hidden', 'true'); halo.style.pointerEvents = 'none';
+          halo.style.setProperty('fill', 'none', 'important');
+          halo.style.setProperty('stroke', parseInt(ink.slice(1, 3), 16) > 127 ? '#000000' : '#ffffff', 'important');
+          halo.style.setProperty('stroke-opacity', '1', 'important'); halo.style.setProperty('opacity', '1', 'important');
+          halo.style.setProperty('stroke-width', width + 2 + 'px', 'important'); shape.before(halo);
+        }
+      }
+      shape.style.setProperty('stroke-width', width + 'px', 'important');
+    }
     let markerId = 0;
     for (const edge of svg.querySelectorAll('path,line,polyline')) {
       if (edge.closest('defs,marker,clipPath,mask,pattern,.node,.cluster,.edgeLabel,.classLabel,.label')) continue;
@@ -325,7 +368,7 @@
     });
     return queue;
   }
-  function scrollToLine(line) {
+  function scrollToLine(line, alignTop = false) {
     if (!Number.isFinite(line) || line < 0) return;
     const items = [...body.querySelectorAll('[data-line]')];
     // Nested lists and blockquotes overlap their children's source ranges.
@@ -368,6 +411,16 @@
         height = Math.max(0, (next || body).getBoundingClientRect()[next ? 'top' : 'bottom'] + window.scrollY - top);
       }
       top += height * Math.min(1, Math.max(0, (line - start) / (end - start)));
+    }
+    if (alignTop && !pdfMode) {
+      // A short tail must not clamp an explicit source jump to the bottom.
+      // Keep this UI-only space outside Markdown, Copy and exported fragments.
+      let space = document.getElementById('source-jump-space');
+      if (!space) {
+        space = document.createElement('div'); space.id = 'source-jump-space';
+        space.setAttribute('aria-hidden', 'true'); document.body.append(space);
+      }
+      space.style.height = '100vh';
     }
     window.scrollTo(window.scrollX, Math.max(0, top - (document.getElementById('toolbar')?.offsetHeight || 0) - 12));
   }
@@ -451,6 +504,7 @@
     clearTimeout(scrollTimer); restoring = true;
     if (current) positions.set(current.file, window.scrollY);
     const sameFile = current?.file === data.file;
+    if (!sameFile) document.getElementById('source-jump-space')?.remove();
     const top = sameFile ? window.scrollY : positions.get(data.file) ?? data.scrollY ?? 0;
     current = data; diagrams.length = 0;
     if (data.base) document.querySelector('base').href = data.base;
@@ -680,8 +734,35 @@
     else if ((event.ctrlKey && event.key.toLowerCase() === 'f') || event.key === 'F7') { event.preventDefault(); openFind(); }
     else if (event.key === 'F5') { event.preventDefault(); bridge('reload'); }
   });
+  function sourceLineAtPoint(item, event) {
+    const start = +item.dataset.line, end = +item.dataset.lineEnd || start + 1;
+    const isCode = item.matches('pre,pre > code');
+    const text = isCode ? (item.matches('code') ? item : item.querySelector('code')) :
+      item.matches('p,h1,h2,h3,h4,h5,h6') ? item : null;
+    if (!text) return start;
+    // Hit-test the actual rendered glyph, including highlighted spans and wraps.
+    // Counting DOM newlines preserves physical source lines without adding spans
+    // that would change Copy/export formatting or relying on block height ratios.
+    let caret = document.caretRangeFromPoint?.(event.clientX, event.clientY);
+    if (!caret && document.caretPositionFromPoint) {
+      const position = document.caretPositionFromPoint(event.clientX, event.clientY);
+      if (position) { caret = document.createRange(); caret.setStart(position.offsetNode, position.offset); }
+    }
+    if (!caret || !text.contains(caret.startContainer)) return start;
+    const prefix = document.createRange(); prefix.selectNodeContents(text);
+    prefix.setEnd(caret.startContainer, caret.startOffset);
+    const offset = (prefix.toString().match(/\n/g) || []).length;
+    const contentStart = item.hasAttribute('data-content-line') ? +item.dataset.contentLine : start;
+    const value = text.textContent, count = value.split('\n').length - (value.endsWith('\n') ? 1 : 0);
+    return Math.min(end - 1, contentStart + Math.min(offset, Math.max(0, count - 1)));
+  }
   body.addEventListener('dblclick', event => {
-    const item = event.target.closest('[data-line]'); if (item && !event.target.closest('a,details')) bridge('line:' + item.dataset.line);
+    const item = event.target.closest('[data-line]');
+    if (item && !event.target.closest('a,details')) {
+      const line = sourceLineAtPoint(item, event);
+      scrollToLine(line, true);
+      bridge('line:' + line);
+    }
   });
   body.addEventListener('click', event => {
     const a = event.target.closest('a[href]'); if (!a) return;

@@ -1,75 +1,75 @@
 # Testing and compatibility
 
-Release 1.4.0 validation is in progress. Windows 10 build 19045 is the available
-test platform. Windows 11 is a target platform but has not been tested separately.
-The first release may ship with that limitation explicitly stated; this does not
-replace the remaining Windows 10 and native Notepad++ acceptance checks.
-The supported Notepad++ minimum will be set after API review and actual startup
-checks against the current release and an earlier candidate minimum.
+[Overview](../README.md) · [Build instructions](BUILDING.md)
 
-## Local 1.4.0 candidate results
+Status as of **21 October 2026** for **1.4.1**. Both Release packages passed
+archive/version/architecture checks and **26 fresh startup/API/runtime checks
+per architecture** in real Notepad++ 8.4.1, with Preview payload creation,
+WebView2 connection and clean shutdown verified. SHA-256 checksums accompany
+the release downloads.
 
-Status as of 21 October 2026, on Windows 10 build 19045 with WebView2 Runtime
-155.0.4283.62 and native Notepad++ 8.9.8.1:
+The broader functional results below were obtained for **1.4.0 RC2, local.2**;
+its runtime implementation and bundled dependencies are carried into 1.4.1
+unchanged. The full suite is not claimed as a new 1.4.1 run.
+The test platform is Windows 10 build 19045 with WebView2 Runtime 155.0.4283.62.
 
-- Both x64 and x86 passed **251 full integration checks** and **127 focused
-  checks** each, with no failures; all six output checkers passed. These use real
-  WebView2 with a modeled editor API. The focused runs overlap the full suite;
-  the counts are not a total of unique tests.
-- Native x86 functional acceptance and the final settings/width restart check
-  passed with the owner. Native x64 base functions were checked earlier; the
-  latest defaults, About, English hints, themes and zoom also passed. Final x64
-  filename-copy, diagram-contrast, interior-scroll, docking and restart checks
-  remain pending. The owner waived repetition of the editor-selection boundary
-  test; that waiver is not a new manual pass.
-- The bilingual README review, six English example diagrams in both themes and
-  five refreshed screenshots passed documentation review. Documentation-only
-  packaging reuses the tested DLLs and checks source/assets against their tested
-  snapshot; it does not claim another full integration run.
-- The complete plugin's GPL SDK distribution question remains open. See
-  [license review](LICENSING.md); successful tests do not settle licensing.
+## Accepted runtime baseline
 
-Navigation checks cover A → B → C, scroll restoration, unsaved open buffers,
-outline and inline section jumps within one file, cross-document fragments,
-forward-branch replacement, failed opening/retry,
-light/dark Mermaid, host theme notifications and toolbar wrapping at 320 px.
-History is capped at 100 session visits; refreshed content does not add visits.
-The left-hand control order is Outline → Back → Forward → Copy.
+| Area | x64 | x86 | Scope |
+| --- | --- | --- | --- |
+| Full integration suite | 291 passed | 291 passed | Real WebView2 with a modeled Notepad++/Scintilla API. |
+| Focused regressions | 82 passed | 82 passed | Interior-line navigation and diagram outlines; overlaps the full suite. |
+| Output inspection | Passed | Passed | Six checkers cover PDF, DOCX, selections, image sizes, edge labels and image reuse. |
+| Native functional acceptance | Passed | Passed | Owner-operated Notepad++ 8.9.8.1: Preview, copy/export, themes, zoom, navigation, docking and settings. |
+| Minimum-version smoke | Passed | Passed | Real Notepad++ 8.4.1; 26 startup/API/runtime checks per architecture at clean launch and restart. |
+| Local Plugins Admin lifecycle | Passed | Passed | Install, update, remove and reinstall using official debug tools and a private local catalog. |
 
-An additional lifecycle suite exercises inactive-session collection, live leases,
-browser processes, junction rejection, settings/document preservation and an
-unavailable Runtime using the real loader with an empty process-local browser
-folder. It checks failure cleanup for PDF/DOCX without uninstalling the machine
-Runtime. Run it **without administrator rights**:
+The declared minimum is **Notepad++ 8.4.1**. Its automated smoke checks cover
+the real DLL, native API interactions, commands, configuration, generated Preview
+payload and browser connection. They do not claim visual/export acceptance on
+8.4.1; native visual checks were performed on 8.9.8.1.
 
-```powershell
-./test.ps1 -Architecture x64 -Suite Lifecycle
-./test.ps1 -Architecture x86 -Suite Lifecycle
-```
+The latest short native checks covered filename copying, Mermaid text/arrows/
+borders in both themes, synchronization inside long and wrapped blocks, exact
+double-click navigation, docking, width and preferences after restart.
+The owner waived repeating the editor-selection boundary test in the final
+short pass; this is not counted as another manual pass.
 
-The earlier candidate passed 14 lifecycle checks per architecture. Private
-fixtures also exercised manual installation, binary replacement, restart,
-removal and reinstallation in portable Notepad++ 8.4.1 x64/x86, preserving
-settings and a synthetic document; a browser crash was found during that earlier
-work. Those historical results do not establish a supported minimum or close
-the final candidate's installation/update/removal acceptance. The owner has
-confirmed working Preview/diagrams in Program Files with the older zoom-fix
-build. The latest x64 candidate has since been installed there and all 63 files
-verified; its post-installation GUI check remains pending.
-Merely seeing a loaded DLL does not count as a rendering pass.
+## Plugins Admin lifecycle
 
-The Codex sandbox can stall WebView2 script callbacks even in an unchanged prior
-test binary. Normal-runtime regression results must be distinguished from the
-non-admin token checks. A callback deadline allows cold startup and CPU contention;
-timeouts remain failures. See [data and privacy](DATA-PRIVACY.md) for collection rules.
+Both architectures completed the actual Plugins Admin flow in separate portable
+Notepad++ 8.9.8.1 debug copies with official debug WinGUp 5.4.3:
+install a controlled older baseline → update to 1.4.0 → remove → reinstall 1.4.0.
+All **64 files** in each current test package matched the ZIP. Settings, a synthetic
+document and a data sentinel remained byte-identical. Removal of the plugin folder
+and its later restoration were independently observed.
 
-An isolated build from the curated public source succeeded for both architectures
-with the pinned toolchain. All PE sections matched the workspace DLLs; file
-headers differed, so byte-for-byte reproducible binaries are not claimed.
-Release ZIP/version checks passed; a Development build was rejected by packaging.
-The supplied GitHub Actions template is not active yet: publishing credentials
-lack workflow permission. Remote build CI remains pending and does not replace
-desktop acceptance. See [building](BUILDING.md) for activation instructions.
+The old 1.3.2 fixture lacked Windows VERSIONINFO. Test copies received a truthful
+1.3.2.0 resource so Plugins Admin could compare numeric versions; non-resource
+PE sections stayed unchanged. A test-only data-directory override aligned its
+configuration path. This establishes a controlled 1.3.2.0 → 1.4.0.0 update,
+not an unchanged historical-release upgrade.
+
+The catalog and downloads were local. The signed public catalog and the future
+release URLs were not exercised. After each final exit, 31 seconds of observation
+found no related Notepad++, WinGUp or WebView2 processes and no new dumps.
+Successful UI steps were confirmed by the owner; file/hash/process checks were
+performed separately. They are not presented as automated screenshot proof.
+
+## Remaining Plugins Admin checks
+
+- Run the official nppPluginList schema/validator against the final entries and
+  check installation using the final public download URLs.
+- Submit the x64/x86 catalog entries for maintainer review.
+
+Windows 11 has not been independently tested. There is no ARM64 package or
+developer-owned code signature. The supplied GitHub Actions file is an inactive
+template; no remote CI pass is claimed. Source builds succeeded on the local
+pinned toolchain; byte-for-byte reproducible DLLs are not claimed.
+
+Documentation-only changes do not rerun or supersede the binary acceptance.
+New media are captured from the actual viewer in a separate WebView2 host;
+[capture details](screenshots/README.md) distinguish them from native editor tests.
 
 ## Automated checks
 
@@ -132,22 +132,3 @@ Some constrained environments prevent WebView2 JavaScript callbacks. Use a norma
 desktop process for those tests. GPU-related issues can be investigated with
 process-local `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS=--disable-gpu`; do not treat
 an unexecuted or skipped integration test as a pass.
-
-## Actual Notepad++ and distribution
-
-The API model does not validate the real plugin manager. Before final release,
-check both architectures in clean installed/portable Notepad++ environments:
-DLL loading, toolbar/menu, preview, selection focus, copy, export, restart and
-settings placement. Include a normal user account with a read-only installation
-directory. Record the exact Windows, Notepad++ and Runtime versions.
-
-For Plugins Admin, use the official debug Notepad++/WinGUp procedure with a local
-catalog, then verify the public download URLs, install, update and removal.
-The ZIP/resource checker is useful preparation, but does not replace that test.
-
-Prerelease downloads are checked separately against their published checksums;
-this does not replace the official catalog validator or Plugins Admin acceptance.
-The supplied build CI template is separate from native acceptance and
-distribution checks; remote execution remains pending. The minimum supported
-Notepad++ version remains unconfirmed; Windows 11 remains untested. This is a
-prerelease, with final native acceptance and whole-plugin licensing review open.

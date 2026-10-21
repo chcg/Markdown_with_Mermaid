@@ -19,10 +19,13 @@ assert.deepEqual([...en.keys()],[...ru.keys()],'README section order differs');
 const sorted = items => items.sort();
 const links = text => sorted([...text.matchAll(/!?\[[^\]]*\]\(([^)]+)\)/g)].map(m=>m[1])
   .filter(x=>!/^README(?:\.ru)?\.md$/.test(x))
-  // Language-specific screenshots show the same sample and diagram structure.
-  .map(x=>x.replace(/^(docs\/screenshots\/preview-(?:light|dark))\.en(\.png)$/,'$1$2')));
-const examples = text => [...text.matchAll(/```([^\n]*)\n([\s\S]*?)```/g)].map(m=>m[1]+'\n'+m[2].trim());
-const inline = text => sorted([...text.replace(/```[\s\S]*?```/g,'').matchAll(/`([^`\n]+)`/g)].map(m=>m[1]));
+  // Explicitly paired translations/assets, not arbitrary language suffixes.
+  .map(x=>x.replace(/^docs\/USAGE\.ru\.md$/, 'docs/USAGE.md')
+    .replace(/^(docs\/screenshots\/(?:preview-demo|banner|demo))\.(?:en|ru)(\.(?:gif|svg|md))$/, '$1$2')
+    .replace(/^(docs\/screenshots\/preview-(?:light|dark))\.en(\.png)$/,'$1$2')));
+const fenced = /^(`{3,})([^\n]*)\n([\s\S]*?)^\1[ \t]*$/gm;
+const examples = text => [...text.matchAll(fenced)].map(m=>m[2]+'\n'+m[3].trim());
+const inline = text => sorted([...text.replace(fenced,'').matchAll(/`([^`\n]+)`/g)].map(m=>m[1]));
 const numbers = text => sorted((text.replace(/(\d)[ ,](?=\d{3}(?!\d))/g,'$1').replace(/(\d),(\d)/g,'$1.$2').match(/\d+(?:\.\d+)*%?/g)||[]));
 const results=[];
 for (const [id,english] of en) {
@@ -32,6 +35,9 @@ for (const [id,english] of en) {
   }
   const items = text => (text.match(/^(?:- |\d+\. )/gm)||[]).length;
   assert.equal(items(english),items(russian),id+': list lengths differ');
+  assert.equal((english.match(/^\|/gm)||[]).length,(russian.match(/^\|/gm)||[]).length,id+': table row counts differ');
+  const anchors=t=>[...t.matchAll(/<a id="([^"]+)"><\/a>/g)].map(m=>m[1]);
+  assert.deepEqual(anchors(english),anchors(russian),id+': explicit anchors differ');
   results.push(id);
 }
 console.log(JSON.stringify({status:'PASS',sections:results.length,checks:['section order','links and screenshot paths','code examples','technical identifiers','numeric facts','list lengths'],semanticReview:'requires human review; not automatically inferred',sectionIds:results},null,2));

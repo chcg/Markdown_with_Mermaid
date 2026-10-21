@@ -16,8 +16,8 @@ compiler caches and generated headers stay in `build`. A cold toolchain build
 can emit warnings from bundled libunwind; build failures stop the script.
 
 `VERSION` is the version source. The build generates the numeric Windows
-VERSIONINFO resource, About version and HTTP User-Agent. For 1.4.0 the numeric
-DLL version is 1.4.0.0. Release mode is the default and strips debug information.
+VERSIONINFO resource, About version and HTTP User-Agent. For 1.4.1 the numeric
+DLL version is 1.4.1.0. Release mode is the default and strips debug information.
 
 Release output:
 
@@ -68,8 +68,7 @@ Server 2022, without uploading binary artifacts, creating a tag or publishing a
 release. It does not perform desktop/WebView2 acceptance tests or establish
 compatibility with Windows 11.
 
-The template is not active in this repository. The publication credential lacks
-GitHub's workflow permission, so the template is stored as documentation. A
-maintainer with the appropriate permission can copy it to
-`.github/workflows/build.yml` and commit that change to enable CI. No remote
-build result is claimed until an actual workflow run has completed.
+The template is not active in this repository. To enable CI, a maintainer can
+copy it to `.github/workflows/build.yml` and commit the change with the
+appropriate repository permissions. A successful workflow checks the build;
+desktop/WebView2 acceptance remains a separate step.
