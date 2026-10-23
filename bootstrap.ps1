@@ -16,5 +16,5 @@ if (!(Test-Path tools/webview2/build/native/include/WebView2.h)) {
     Get-VerifiedArchive 'https://api.nuget.org/v3-flatcontainer/microsoft.web.webview2/1.0.2903.40/microsoft.web.webview2.1.0.2903.40.nupkg' 'tools/webview2.zip' 'EF128016DD1E51C59178C827ED5B8AA3322C57AFA8675D930F8109505542AD74'
     Expand-Archive tools/webview2.zip tools/webview2 -Force
 }
-if ((Get-FileHash assets/mermaid.min.js -Algorithm SHA256).Hash -ne '18327BEF70D96FB505FE7287D9F6A7362EBF07FF6576DDFAFFB1A06F3E1A2954') { throw 'Unexpected Mermaid bundle' }
+if ((Get-FileHash assets/mermaid.min.js -Algorithm SHA256).Hash -ne '1020bb3f0cd2721df89a2d0a9dab3b2676ee65f84ffb401e53849d83a63454e2') { throw 'Unexpected Mermaid bundle' }
 Write-Output 'Build tools and Mermaid 11.16.1 are ready.'

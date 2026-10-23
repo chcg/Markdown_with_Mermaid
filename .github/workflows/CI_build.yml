@@ -1,0 +1,45 @@
+name: CI_build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    env:
+      Projectname: Markdown_with_Mermaid
+    strategy:
+      fail-fast: false
+      matrix:
+        build_configuration: [Release, Development]
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v7
+
+    - name: Build of plugin dll
+      working-directory: .\
+      run: |
+           .\bootstrap.ps1
+           .\build.ps1 -Profile ${{ matrix.build_configuration }}
+
+    - name: Archive artifacts for x64
+      if: matrix.build_configuration == 'Release'
+      uses: actions/upload-artifact@v7
+      with:
+          path: .\dist\${{ env.Projectname }}-**-x64.zip
+          archive: false
+
+    - name: Archive artifacts for x86
+      if: matrix.build_configuration == 'Release'
+      uses: actions/upload-artifact@v7
+      with:
+          path: .\dist\${{ env.Projectname }}-**-x86.zip
+          archive: false
+
+
+    - name: Create release on tagging
+      uses: softprops/action-gh-release@v3
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+          files: ${{ env.Projectname }}-**.zip
